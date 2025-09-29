@@ -4,10 +4,25 @@ def count_words(text):
 
 def count_characters(text):
     sanitised_text = text.lower()
-    counts = {}
+    chars = {}
     for char in sanitised_text:
-        if char in counts:
-            counts[char] += 1
+        if char in chars:
+            chars[char] += 1
         else:
-            counts[char] = 1
-    return(counts)
+            chars[char] = 1
+    return(chars)
+
+def sort_chars(chars):
+    list_of_dicts = []
+    for char, count in chars.items():
+        individual_dict = {
+            "char": char,
+            "num": count
+        }
+        list_of_dicts.append(individual_dict)
+    list_of_dicts.sort(reverse=True, key=sort_keys)
+    return list_of_dicts
+
+def sort_keys(chars):
+    return chars["num"]
+
