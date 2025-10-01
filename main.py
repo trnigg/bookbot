@@ -8,7 +8,6 @@ if len(sys.argv) != 2:
 relative_path = sys.argv[1]
 
 def main(relative_path):
-    relative_path = "books/frankenstein.txt"
     text = get_book_text(relative_path)
     num_words = count_words(text)
     char_dict = count_characters(text)
