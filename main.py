@@ -1,4 +1,11 @@
+import sys
 from stats import count_words, count_characters, sort_chars
+
+if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+relative_path = sys.argv[1]
 
 def main(relative_path):
     relative_path = "books/frankenstein.txt"
@@ -25,5 +32,4 @@ def print_report(relative_path, num_words, sorted_chars):
             print(f"{char}: {count}")
     print("============= END ===============")
 
-relative_path = "books/frankenstein.txt"
 main(relative_path)
